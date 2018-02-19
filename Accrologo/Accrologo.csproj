@@ -45,18 +45,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="src\Angle.cs" />
+    <Compile Include="src\AST.cs" />
+    <Compile Include="src\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="src\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="my_PictureBox.cs">
+    <Compile Include="src\my_PictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="src\Parser.cs" />
+    <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="src\tortoise.cs" />
+    <EmbeddedResource Include="src\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -83,7 +87,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="icons\quatre.png" />
+    <None Include="icons\trois.png" />
+    <None Include="icons\un.png" />
+    <None Include="icons\alpaga.png" />
+    <None Include="icons\deux.png" />
+    <None Include="icons\cinq.png" />
     <Content Include="icons\discord.png" />
+    <None Include="icons\Platypus.png" />
+    <None Include="icons\pandicorn.png" />
+    <None Include="icons\dolphin.png" />
     <None Include="Resources\discord.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

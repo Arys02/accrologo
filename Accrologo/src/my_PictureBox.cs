@@ -4,11 +4,11 @@ namespace Accrologo
 {
     public class myPictureBox : PictureBox
     {
-        public uint id;
+        public string token;
 
-        public myPictureBox(uint id)
+        public myPictureBox(string token)
         {
-            this.id = id;
+            this.token = token;
         }
     }
 }

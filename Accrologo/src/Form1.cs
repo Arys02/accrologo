@@ -19,9 +19,10 @@ namespace Accrologo
         public Form1()
         {
             InitializeComponent();
+            g = draw_box.CreateGraphics();
         }
 
-        private PictureBox newpic(uint id)
+        private PictureBox newpic(string id)
         {
             myPictureBox pf = new myPictureBox(id);
             pf.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -38,13 +39,14 @@ namespace Accrologo
 
         private void button1_clic(object sender, EventArgs e)
         {
-            layoutPanel.Controls.Add(newpic(1));
+            layoutPanel.Controls.Add(newpic("TOKEN1"));
         }
 
         private void test_run(object sender, EventArgs e)
         {
-            g = draw_box.CreateGraphics();
             g.DrawLine(pen1, 250, 50, 400, 200);
+
+
 
             foreach (myPictureBox VARIABLE in layoutPanel.Controls)
             {
@@ -52,8 +54,13 @@ namespace Accrologo
                 //call parser 
                 // parser.parse(variable.id)
                 Console.WriteLine(VARIABLE.Image);
-                Console.WriteLine(VARIABLE.id);
+                Console.WriteLine(VARIABLE.token);
             }
+        }
+
+        private void forwardClick(object sender, EventArgs e)
+        {
+
         }
     }
 }
