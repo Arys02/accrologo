@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Accrologo.src
+namespace Accrologo
 {
-    class Tortoise
+    public class Tortoise
     {
         private Angle angle;
         private Point pos;
@@ -25,17 +25,26 @@ namespace Accrologo.src
         }
 
         public void turnRight(int newAngle)
-        { }
+        {
+           this.angle = this.angle + newAngle;
+        }
 
         public  void turnLeft(int newAngle)
-        { }
+        {
+            this.angle = this.angle - newAngle;
+        }
 
-        public void updateAndMove(int forward)
+        public void updateAndMove(int forward, Graphics g)
         {
             double toRad = (Math.PI / 180) * this.angle.value;
-            Point Newpos = new Point(Convert.ToInt32(pos.X + forward * Math.Cos(toRad)),
+            Point newpos = new Point(Convert.ToInt32(pos.X + forward * Math.Cos(toRad)),
                             Convert.ToInt32(pos.Y + forward * Math.Sin(toRad)));
-            // move
+                
+            g.DrawLine(new Pen(Color.Blue, 2F), this.pos.X, this.pos.Y, newpos.X, newpos.Y);
+            Console.WriteLine(pos);
+            Console.WriteLine(newpos);
+            Console.WriteLine("move");
+            this.pos = newpos;
         }
         //point
         //angle
