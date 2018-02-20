@@ -30,11 +30,11 @@
         {
             this.layoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.button_run = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.button_seven = new System.Windows.Forms.Button();
+            this.button_six = new System.Windows.Forms.Button();
             this.button_right = new System.Windows.Forms.Button();
             this.button_repeate = new System.Windows.Forms.Button();
             this.button_forward = new System.Windows.Forms.Button();
@@ -67,15 +67,6 @@
             this.button_run.UseVisualStyleBackColor = true;
             this.button_run.Click += new System.EventHandler(this.test_run);
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(286, 614);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(53, 53);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // button11
             // 
             this.button11.Location = new System.Drawing.Point(217, 732);
@@ -103,14 +94,24 @@
             this.button13.Text = "button13";
             this.button13.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // button_seven
             // 
-            this.button14.Location = new System.Drawing.Point(148, 673);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(53, 53);
-            this.button14.TabIndex = 20;
-            this.button14.Text = "button14";
-            this.button14.UseVisualStyleBackColor = true;
+            this.button_seven.Image = global::Accrologo.Properties.Resources.sept;
+            this.button_seven.Location = new System.Drawing.Point(148, 673);
+            this.button_seven.Name = "button_seven";
+            this.button_seven.Size = new System.Drawing.Size(53, 53);
+            this.button_seven.TabIndex = 20;
+            this.button_seven.UseVisualStyleBackColor = true;
+            // 
+            // button_six
+            // 
+            this.button_six.Image = global::Accrologo.Properties.Resources.six;
+            this.button_six.Location = new System.Drawing.Point(286, 614);
+            this.button_six.Name = "button_six";
+            this.button_six.Size = new System.Drawing.Size(53, 53);
+            this.button_six.TabIndex = 16;
+            this.button_six.UseVisualStyleBackColor = true;
+            this.button_six.Click += new System.EventHandler(this.button_six_Click);
             // 
             // button_right
             // 
@@ -120,6 +121,7 @@
             this.button_right.Size = new System.Drawing.Size(53, 53);
             this.button_right.TabIndex = 15;
             this.button_right.UseVisualStyleBackColor = true;
+            this.button_right.Click += new System.EventHandler(this.button_right_Click);
             // 
             // button_repeate
             // 
@@ -129,6 +131,7 @@
             this.button_repeate.Size = new System.Drawing.Size(53, 53);
             this.button_repeate.TabIndex = 14;
             this.button_repeate.UseVisualStyleBackColor = true;
+            this.button_repeate.Click += new System.EventHandler(this.button_repeate_Click);
             // 
             // button_forward
             // 
@@ -148,6 +151,7 @@
             this.button_one.Size = new System.Drawing.Size(53, 53);
             this.button_one.TabIndex = 12;
             this.button_one.UseVisualStyleBackColor = true;
+            this.button_one.Click += new System.EventHandler(this.button_one_Click);
             // 
             // button_two
             // 
@@ -157,6 +161,7 @@
             this.button_two.Size = new System.Drawing.Size(53, 53);
             this.button_two.TabIndex = 11;
             this.button_two.UseVisualStyleBackColor = true;
+            this.button_two.Click += new System.EventHandler(this.button_two_Click);
             // 
             // button_three
             // 
@@ -166,6 +171,7 @@
             this.button_three.Size = new System.Drawing.Size(53, 53);
             this.button_three.TabIndex = 10;
             this.button_three.UseVisualStyleBackColor = true;
+            this.button_three.Click += new System.EventHandler(this.button_three_Click);
             // 
             // button_four
             // 
@@ -175,6 +181,7 @@
             this.button_four.Size = new System.Drawing.Size(53, 53);
             this.button_four.TabIndex = 9;
             this.button_four.UseVisualStyleBackColor = true;
+            this.button_four.Click += new System.EventHandler(this.button_four_Click);
             // 
             // button_five
             // 
@@ -184,6 +191,7 @@
             this.button_five.Size = new System.Drawing.Size(53, 53);
             this.button_five.TabIndex = 8;
             this.button_five.UseVisualStyleBackColor = true;
+            this.button_five.Click += new System.EventHandler(this.button_five_Click);
             // 
             // button_left
             // 
@@ -193,6 +201,7 @@
             this.button_left.Size = new System.Drawing.Size(53, 53);
             this.button_left.TabIndex = 7;
             this.button_left.UseVisualStyleBackColor = true;
+            this.button_left.Click += new System.EventHandler(this.button_left_Click);
             // 
             // draw_box
             // 
@@ -217,11 +226,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 832);
-            this.Controls.Add(this.button14);
+            this.Controls.Add(this.button_seven);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button_six);
             this.Controls.Add(this.button_right);
             this.Controls.Add(this.button_repeate);
             this.Controls.Add(this.button_forward);
@@ -258,11 +267,11 @@
         private System.Windows.Forms.Button button_forward;
         private System.Windows.Forms.Button button_repeate;
         private System.Windows.Forms.Button button_right;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button_six;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button_seven;
     }
 }
 

@@ -62,5 +62,51 @@ namespace Accrologo
         {
 
         }
+
+
+        private void button_left_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_right_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_repeate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_one_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_two_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_three_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_four_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_five_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_six_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
