@@ -12,28 +12,28 @@ namespace Accrologo
          * | <loop>
          * | <sub_declaration>
          * | <sub_execution>
-         * <move>
+         * <move> :=
          * | "forward" num;
          * | "left" num;
          * | "right" num;
-         * <loop>
+         * <loop> :=
          * | "repeat" num "[" <instrs> "]" ;
-         * <sub_declaration>
+         * <sub_declaration> :=
          * | "to" id <instrs> "end" ;
-         * <sub_execution>
+         * <sub_execution> := 
          * | id
          */
-
+            
          /**
           * TOKEN *
-          * forward
-          * left
-          * right
-          * repeat
-          * leftbrace "["
-          * rightbrace "]"
-          * to
-          * end
+          * FORWARD
+          * LEFT
+          * RIGHT
+          * REPEAT
+          * LEFTBRACE "["
+          * RIGHTBRACE "]"
+          * TO
+          * END
           */
 
         public Parser()
