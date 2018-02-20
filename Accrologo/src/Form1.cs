@@ -22,13 +22,13 @@ namespace Accrologo
             g = draw_box.CreateGraphics();
         }
 
-        private PictureBox newpic(string id)
+        private PictureBox newpic(string id, System.Drawing.Bitmap pb)
         {
             myPictureBox pf = new myPictureBox(id);
             pf.SizeMode = PictureBoxSizeMode.StretchImage;
             pf.Height = 53;
             pf.Width = 53;
-            pf.Image = img;
+            pf.Image = pb;
             return pf;
         }
 
@@ -39,7 +39,7 @@ namespace Accrologo
 
         private void button1_clic(object sender, EventArgs e)
         {
-            layoutPanel.Controls.Add(newpic("TOKEN1"));
+            layoutPanel.Controls.Add(newpic("TOKEN1", global::Accrologo.Properties.Resources.discord1));
         }
 
         private void test_run(object sender, EventArgs e)
@@ -60,53 +60,84 @@ namespace Accrologo
 
         private void forwardClick(object sender, EventArgs e)
         {
-
+            layoutPanel.Controls.Add(newpic("FORWARD", global::Accrologo.Properties.Resources.dolphin));
         }
 
 
         private void button_left_Click(object sender, EventArgs e)
         {
-
+            layoutPanel.Controls.Add(newpic("LEFT", global::Accrologo.Properties.Resources.pandicorn));
         }
 
         private void button_right_Click(object sender, EventArgs e)
         {
-
+            layoutPanel.Controls.Add(newpic("RIGHT", global::Accrologo.Properties.Resources.Platypus));
         }
 
         private void button_repeate_Click(object sender, EventArgs e)
         {
-
+            layoutPanel.Controls.Add(newpic("REPEAT", global::Accrologo.Properties.Resources.alpaga));
         }
 
         private void button_one_Click(object sender, EventArgs e)
         {
-
+            layoutPanel.Controls.Add(newpic("ONE", global::Accrologo.Properties.Resources.un));
         }
 
         private void button_two_Click(object sender, EventArgs e)
         {
-
+            layoutPanel.Controls.Add(newpic("TWO", global::Accrologo.Properties.Resources.deux));
         }
 
         private void button_three_Click(object sender, EventArgs e)
         {
-
+            layoutPanel.Controls.Add(newpic("THREE", global::Accrologo.Properties.Resources.trois));
         }
 
         private void button_four_Click(object sender, EventArgs e)
         {
-
+            layoutPanel.Controls.Add(newpic("FOUR", global::Accrologo.Properties.Resources.quatre));
         }
 
         private void button_five_Click(object sender, EventArgs e)
         {
-
+            layoutPanel.Controls.Add(newpic("FIVE", global::Accrologo.Properties.Resources.cinq));
         }
 
         private void button_six_Click(object sender, EventArgs e)
         {
+            layoutPanel.Controls.Add(newpic("SIX", global::Accrologo.Properties.Resources.six));
+        }
 
+        private void button_seven_Click(object sender, EventArgs e)
+        {
+            layoutPanel.Controls.Add(newpic("SEVEN", global::Accrologo.Properties.Resources.sept));
+        }
+
+        private void button_eight_Click(object sender, EventArgs e)
+        {
+            layoutPanel.Controls.Add(newpic("EIGHT", global::Accrologo.Properties.Resources.huit));
+        }
+
+        private void button_nine_Click(object sender, EventArgs e)
+        {
+            layoutPanel.Controls.Add(newpic("NINE", global::Accrologo.Properties.Resources.neuf));
+        }
+
+        private void button_zero_Click(object sender, EventArgs e)
+        {
+            layoutPanel.Controls.Add(newpic("NINE", global::Accrologo.Properties.Resources.neuf));
+        }
+
+        private void button_rightbrace_Click(object sender, EventArgs e)
+        {
+
+            layoutPanel.Controls.Add(newpic("RIGHTBRACE", global::Accrologo.Properties.Resources.rightbrace));
+        }
+
+        private void button_leftbrace_Click(object sender, EventArgs e)
+        {
+            layoutPanel.Controls.Add(newpic("LEFTBRACE", global::Accrologo.Properties.Resources.leftbrace));
         }
     }
 }

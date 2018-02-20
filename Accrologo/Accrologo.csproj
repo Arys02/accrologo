@@ -88,7 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons\huit.png" />
+    <None Include="icons\leftbrace.png" />
     <Content Include="icons\neuf.png" />
+    <None Include="icons\rightbrace.png" />
     <Content Include="icons\zero.png" />
     <None Include="icons\sept.png" />
     <None Include="icons\six.png" />

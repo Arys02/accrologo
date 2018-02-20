@@ -30,11 +30,14 @@
         {
             this.layoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.button_run = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.button_rightbrace = new System.Windows.Forms.Button();
+            this.button_leftbrace = new System.Windows.Forms.Button();
             this.button_seven = new System.Windows.Forms.Button();
+            this.button_eight = new System.Windows.Forms.Button();
+            this.button_nine = new System.Windows.Forms.Button();
+            this.button_zero = new System.Windows.Forms.Button();
             this.button_six = new System.Windows.Forms.Button();
+
             this.button_right = new System.Windows.Forms.Button();
             this.button_repeate = new System.Windows.Forms.Button();
             this.button_forward = new System.Windows.Forms.Button();
@@ -67,32 +70,25 @@
             this.button_run.UseVisualStyleBackColor = true;
             this.button_run.Click += new System.EventHandler(this.test_run);
             // 
-            // button11
+            // button_rightbrace
             // 
-            this.button11.Location = new System.Drawing.Point(217, 732);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(53, 53);
-            this.button11.TabIndex = 17;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
+            this.button_rightbrace.Image = global::Accrologo.Properties.Resources.rightbrace;
+            this.button_rightbrace.Location = new System.Drawing.Point(286, 732);
+            this.button_rightbrace.Name = "button_rightbrace";
+            this.button_rightbrace.Size = new System.Drawing.Size(53, 53);
+            this.button_rightbrace.TabIndex = 22;
+            this.button_rightbrace.UseVisualStyleBackColor = true;
+            this.button_rightbrace.Click += new System.EventHandler(this.button_rightbrace_Click);
             // 
-            // button12
+            // button_leftbrace
             // 
-            this.button12.Location = new System.Drawing.Point(286, 673);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(53, 53);
-            this.button12.TabIndex = 18;
-            this.button12.Text = "button12";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(217, 673);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(53, 53);
-            this.button13.TabIndex = 19;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = true;
+            this.button_leftbrace.Image = global::Accrologo.Properties.Resources.leftbrace;
+            this.button_leftbrace.Location = new System.Drawing.Point(148, 732);
+            this.button_leftbrace.Name = "button_leftbrace";
+            this.button_leftbrace.Size = new System.Drawing.Size(53, 53);
+            this.button_leftbrace.TabIndex = 21;
+            this.button_leftbrace.UseVisualStyleBackColor = true;
+            this.button_leftbrace.Click += new System.EventHandler(this.button_leftbrace_Click);
             // 
             // button_seven
             // 
@@ -102,6 +98,37 @@
             this.button_seven.Size = new System.Drawing.Size(53, 53);
             this.button_seven.TabIndex = 20;
             this.button_seven.UseVisualStyleBackColor = true;
+            this.button_seven.Click += new System.EventHandler(this.button_seven_Click);
+            // 
+            // button_eight
+            // 
+            this.button_eight.Image = global::Accrologo.Properties.Resources.huit;
+            this.button_eight.Location = new System.Drawing.Point(217, 673);
+            this.button_eight.Name = "button_eight";
+            this.button_eight.Size = new System.Drawing.Size(53, 53);
+            this.button_eight.TabIndex = 19;
+            this.button_eight.UseVisualStyleBackColor = true;
+            this.button_eight.Click += new System.EventHandler(this.button_eight_Click);
+            // 
+            // button_nine
+            // 
+            this.button_nine.Image = global::Accrologo.Properties.Resources.neuf;
+            this.button_nine.Location = new System.Drawing.Point(286, 673);
+            this.button_nine.Name = "button_nine";
+            this.button_nine.Size = new System.Drawing.Size(53, 53);
+            this.button_nine.TabIndex = 18;
+            this.button_nine.UseVisualStyleBackColor = true;
+            this.button_nine.Click += new System.EventHandler(this.button_nine_Click);
+            // 
+            // button_zero
+            // 
+            this.button_zero.Image = global::Accrologo.Properties.Resources.zero;
+            this.button_zero.Location = new System.Drawing.Point(217, 732);
+            this.button_zero.Name = "button_zero";
+            this.button_zero.Size = new System.Drawing.Size(53, 53);
+            this.button_zero.TabIndex = 17;
+            this.button_zero.UseVisualStyleBackColor = true;
+            this.button_zero.Click += new System.EventHandler(this.button_zero_Click);
             // 
             // button_six
             // 
@@ -226,10 +253,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 832);
+            this.Controls.Add(this.button_rightbrace);
+            this.Controls.Add(this.button_leftbrace);
             this.Controls.Add(this.button_seven);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button_eight);
+            this.Controls.Add(this.button_nine);
+            this.Controls.Add(this.button_zero);
             this.Controls.Add(this.button_six);
             this.Controls.Add(this.button_right);
             this.Controls.Add(this.button_repeate);
@@ -268,10 +297,12 @@
         private System.Windows.Forms.Button button_repeate;
         private System.Windows.Forms.Button button_right;
         private System.Windows.Forms.Button button_six;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button_zero;
+        private System.Windows.Forms.Button button_nine;
+        private System.Windows.Forms.Button button_eight;
         private System.Windows.Forms.Button button_seven;
+        private System.Windows.Forms.Button button_leftbrace;
+        private System.Windows.Forms.Button button_rightbrace;
     }
 }
 
