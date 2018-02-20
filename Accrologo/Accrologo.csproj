@@ -87,6 +87,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="icons\sept.png" />
+    <None Include="icons\six.png" />
     <None Include="icons\quatre.png" />
     <None Include="icons\trois.png" />
     <None Include="icons\un.png" />
