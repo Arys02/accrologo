@@ -12,14 +12,16 @@ namespace Accrologo
 {
     public partial class Form1 : Form
     {
-        private Graphics g;
+        public Graphics g { get; set; }
         private Pen pen1 = new System.Drawing.Pen(Color.Blue, 2F);
-        private Image img = global::Accrologo.Properties.Resources.discord1;
+        private Tortoise turtle; 
+        Parser Parser = new Parser();
         
         public Form1()
         {
             InitializeComponent();
             g = draw_box.CreateGraphics();
+            turtle = new Tortoise(0 ,new Point(draw_box.Size.Width / 2, draw_box.Size.Height / 2));
         }
 
         private PictureBox newpic(string id, System.Drawing.Bitmap pb)
@@ -44,18 +46,18 @@ namespace Accrologo
 
         private void test_run(object sender, EventArgs e)
         {
-            g.DrawLine(pen1, 250, 50, 400, 200);
-
-
+            Queue<string> listToken = new Queue<string>();
 
             foreach (myPictureBox VARIABLE in layoutPanel.Controls)
             {
-
-                //call parser 
-                // parser.parse(variable.id)
-                Console.WriteLine(VARIABLE.Image);
                 Console.WriteLine(VARIABLE.token);
+                listToken.Enqueue(VARIABLE.token);
             }
+
+            Parser.Parse(listToken, turtle, g);
+
+            listToken.Clear();
+            layoutPanel.Controls.Clear();
         }
 
         private void forwardClick(object sender, EventArgs e)
@@ -126,7 +128,7 @@ namespace Accrologo
 
         private void button_zero_Click(object sender, EventArgs e)
         {
-            layoutPanel.Controls.Add(newpic("NINE", global::Accrologo.Properties.Resources.neuf));
+            layoutPanel.Controls.Add(newpic("ZERO", global::Accrologo.Properties.Resources.zero));
         }
 
         private void button_rightbrace_Click(object sender, EventArgs e)

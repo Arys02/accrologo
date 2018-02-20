@@ -37,7 +37,6 @@
             this.button_nine = new System.Windows.Forms.Button();
             this.button_zero = new System.Windows.Forms.Button();
             this.button_six = new System.Windows.Forms.Button();
-
             this.button_right = new System.Windows.Forms.Button();
             this.button_repeate = new System.Windows.Forms.Button();
             this.button_forward = new System.Windows.Forms.Button();
@@ -57,12 +56,12 @@
             this.layoutPanel.AutoScroll = true;
             this.layoutPanel.Location = new System.Drawing.Point(30, 81);
             this.layoutPanel.Name = "layoutPanel";
-            this.layoutPanel.Size = new System.Drawing.Size(280, 453);
+            this.layoutPanel.Size = new System.Drawing.Size(478, 453);
             this.layoutPanel.TabIndex = 2;
             // 
             // button_run
             // 
-            this.button_run.Location = new System.Drawing.Point(470, 673);
+            this.button_run.Location = new System.Drawing.Point(615, 673);
             this.button_run.Name = "button_run";
             this.button_run.Size = new System.Drawing.Size(75, 23);
             this.button_run.TabIndex = 3;
@@ -232,9 +231,10 @@
             // 
             // draw_box
             // 
-            this.draw_box.Location = new System.Drawing.Point(342, 81);
+            this.draw_box.BackColor = System.Drawing.SystemColors.Window;
+            this.draw_box.Location = new System.Drawing.Point(615, 81);
             this.draw_box.Name = "draw_box";
-            this.draw_box.Size = new System.Drawing.Size(621, 453);
+            this.draw_box.Size = new System.Drawing.Size(694, 468);
             this.draw_box.TabIndex = 1;
             this.draw_box.TabStop = false;
             // 
@@ -252,7 +252,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 832);
+            this.ClientSize = new System.Drawing.Size(1447, 832);
             this.Controls.Add(this.button_rightbrace);
             this.Controls.Add(this.button_leftbrace);
             this.Controls.Add(this.button_seven);
