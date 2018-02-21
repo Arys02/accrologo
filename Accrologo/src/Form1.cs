@@ -16,6 +16,7 @@ namespace Accrologo
         private Pen pen1 = new System.Drawing.Pen(Color.Blue, 2F);
         private Tortoise turtle; 
         Parser Parser = new Parser();
+        Queue<string> listToken = new Queue<string>();
         
         public Form1()
         {
@@ -46,7 +47,8 @@ namespace Accrologo
 
         private void test_run(object sender, EventArgs e)
         {
-            Queue<string> listToken = new Queue<string>();
+            listToken = new Queue<string>();
+            turtle = new Tortoise(0 ,new Point(draw_box.Size.Width / 2, draw_box.Size.Height / 2));
 
             foreach (myPictureBox VARIABLE in layoutPanel.Controls)
             {
@@ -54,12 +56,28 @@ namespace Accrologo
                 listToken.Enqueue(VARIABLE.token);
             }
 
+            g.Clear(Color.White);
             Parser.Parse(listToken, turtle, g);
-
             listToken.Clear();
+        }
+        private void button_clear_Click(object sender, EventArgs e)
+        {
             layoutPanel.Controls.Clear();
+            g.Clear(Color.White);
+            
         }
 
+        private void button_return_Click(object sender, EventArgs e)
+        {
+            if (listToken.Count > 0)
+            {
+                //ugly
+                listToken.Reverse();
+                listToken.Dequeue();
+                listToken.Reverse();
+                layoutPanel.Controls.RemoveAt(layoutPanel.Controls.Count - 1);
+            }
+        }
         private void forwardClick(object sender, EventArgs e)
         {
             layoutPanel.Controls.Add(newpic("FORWARD", global::Accrologo.Properties.Resources.dolphin));
@@ -141,5 +159,7 @@ namespace Accrologo
         {
             layoutPanel.Controls.Add(newpic("LEFTBRACE", global::Accrologo.Properties.Resources.leftbrace));
         }
+
+       
     }
 }

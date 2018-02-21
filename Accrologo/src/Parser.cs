@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace Accrologo
 {
@@ -82,32 +84,103 @@ namespace Accrologo
                         break;
                     case "LEFT":
                         System.Console.WriteLine("left");
+                        parseLeft(tokenList, turtle, g);
                         break;
                     case "RIGHT":
                         System.Console.WriteLine("right");
+                        parseRight(tokenList, turtle, g);
+                        break;
+                    case "REPEAT":
+                        Console.WriteLine("repeat");
+                        parseRepeat(tokenList, turtle, g);
+                        break;
+                    default:
+                        using (Font myFont = new Font("Arial", 14))
+                        {
+                            g.DrawString("ERROR : Instruction expected", myFont, Brushes.Green, new Point(2, 2));
+                        }
                         break;
                 }
-
-                    
             }
         }
 
-        public void parseForward(Queue<string> tokenList, Tortoise turtle, System.Drawing.Graphics g)
+        private void parseForward(Queue<string> tokenList, Tortoise turtle, System.Drawing.Graphics g)
         {
-            if (tokenList.Count != 0 && tokenIntDict.ContainsKey(tokenList.Peek()))
+            turtle.updateAndMove(getNumber(tokenList, g), g);
+        }
+
+        private void parseLeft(Queue<string> tokenList, Tortoise turtle, Graphics g)
+        {
+            turtle.turnLeft(getNumber(tokenList, g));
+        }
+
+        private void parseRight(Queue<string> tokenList, Tortoise turtle, Graphics g)
+        {
+            turtle.turnRight(getNumber(tokenList, g));
+        }
+
+        private void parseRepeat(Queue<string> tokenList, Tortoise turtle, System.Drawing.Graphics g)
+        {
+            int repeatNumber = getNumber(tokenList, g);
+            string token = tokenList.Dequeue();
+            if (token != "LEFTBRACE")
             {
-                int number = getNumber(tokenList);
-                turtle.updateAndMove(number, g);
+                using (Font myFont = new Font("Arial", 14))
+                {
+                    g.DrawString("ERROR : Opening missing after number", myFont, Brushes.Green, new Point(2, 2));
+                    return;
+                }
             }
+
+            Queue<string> subTokenQueue = new Queue<string>();
+            while ((tokenList.Count != 0) && (tokenList.Peek() != "RIGHTBRACE"))
+            {
+                subTokenQueue.Enqueue(tokenList.Dequeue());
+            }
+
+            if (tokenList.Count == 0)
+            {
+                using (Font myFont = new Font("Arial", 14))
+                {
+                    g.DrawString("ERROR : Closing missing after instructions", myFont, Brushes.Green, new Point(2, 2));
+                    return;
+                }
+            }
+
+            for (int i = 0; i < repeatNumber; ++i)
+            { 
+                Parse(cloneQueue(subTokenQueue), turtle, g);
+            }
+            tokenList.Dequeue();
+        }
+        private bool isTokenNumber(Queue<string> tokenList)
+        {
+            return tokenList.Count != 0 && tokenIntDict.ContainsKey(tokenList.Peek());
         }
 
-        public int getNumber(Queue<string> tokenList)
+        private Queue<string> cloneQueue(Queue<string> queue)
         {
+            Queue<string> cloneQueue = new Queue<string>();
+            foreach (var VARIABLE in queue)
+                cloneQueue.Enqueue(VARIABLE);
+            return cloneQueue;
+        }
+        private int getNumber(Queue<string> tokenList, Graphics g)
+        {
+            if (!isTokenNumber(tokenList))
+            {
+                using (Font myFont = new Font("Arial", 14))
+                {
+                    g.DrawString("ERROR : Number expected", myFont, Brushes.Green, new Point(2, 2));
+                    return 0;
+                }
+            }
+
             int number = 0;
 
-            int tokenNumber;
-            while(tokenList.Count != 0 && tokenIntDict.ContainsKey(tokenList.Peek()))
+            while(isTokenNumber(tokenList))
             {
+                int tokenNumber;
                 if (tokenIntDict.TryGetValue(tokenList.Dequeue(), out tokenNumber))
                 {
                     number = number * 10 + tokenNumber;

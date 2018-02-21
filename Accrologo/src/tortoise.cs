@@ -46,13 +46,5 @@ namespace Accrologo
             Console.WriteLine("move");
             this.pos = newpos;
         }
-        //point
-        //angle
-        
-
-        //move
-        //update point
-        //update angle
-
     }
 }

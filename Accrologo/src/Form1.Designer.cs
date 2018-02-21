@@ -30,6 +30,8 @@
         {
             this.layoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.button_run = new System.Windows.Forms.Button();
+            this.button_clear = new System.Windows.Forms.Button();
+            this.button_return = new System.Windows.Forms.Button();
             this.button_rightbrace = new System.Windows.Forms.Button();
             this.button_leftbrace = new System.Windows.Forms.Button();
             this.button_seven = new System.Windows.Forms.Button();
@@ -47,7 +49,6 @@
             this.button_five = new System.Windows.Forms.Button();
             this.button_left = new System.Windows.Forms.Button();
             this.draw_box = new System.Windows.Forms.PictureBox();
-            this.m_button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.draw_box)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,13 +62,33 @@
             // 
             // button_run
             // 
-            this.button_run.Location = new System.Drawing.Point(615, 673);
+            this.button_run.Location = new System.Drawing.Point(571, 649);
             this.button_run.Name = "button_run";
-            this.button_run.Size = new System.Drawing.Size(75, 23);
+            this.button_run.Size = new System.Drawing.Size(100, 62);
             this.button_run.TabIndex = 3;
             this.button_run.Text = "Run";
             this.button_run.UseVisualStyleBackColor = true;
             this.button_run.Click += new System.EventHandler(this.test_run);
+            // 
+            // button_clear
+            // 
+            this.button_clear.Image = global::Accrologo.Properties.Resources.clear;
+            this.button_clear.Location = new System.Drawing.Point(355, 555);
+            this.button_clear.Name = "button_clear";
+            this.button_clear.Size = new System.Drawing.Size(53, 53);
+            this.button_clear.TabIndex = 24;
+            this.button_clear.UseVisualStyleBackColor = true;
+            this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
+            // 
+            // button_return
+            // 
+            this.button_return.Image = global::Accrologo.Properties.Resources._return;
+            this.button_return.Location = new System.Drawing.Point(355, 614);
+            this.button_return.Name = "button_return";
+            this.button_return.Size = new System.Drawing.Size(53, 53);
+            this.button_return.TabIndex = 23;
+            this.button_return.UseVisualStyleBackColor = true;
+            this.button_return.Click += new System.EventHandler(this.button_return_Click);
             // 
             // button_rightbrace
             // 
@@ -234,25 +255,17 @@
             this.draw_box.BackColor = System.Drawing.SystemColors.Window;
             this.draw_box.Location = new System.Drawing.Point(615, 81);
             this.draw_box.Name = "draw_box";
-            this.draw_box.Size = new System.Drawing.Size(694, 468);
+            this.draw_box.Size = new System.Drawing.Size(694, 497);
             this.draw_box.TabIndex = 1;
             this.draw_box.TabStop = false;
-            // 
-            // m_button1
-            // 
-            this.m_button1.Image = global::Accrologo.Properties.Resources.discord1;
-            this.m_button1.Location = new System.Drawing.Point(773, 643);
-            this.m_button1.Name = "m_button1";
-            this.m_button1.Size = new System.Drawing.Size(53, 53);
-            this.m_button1.TabIndex = 0;
-            this.m_button1.UseVisualStyleBackColor = true;
-            this.m_button1.Click += new System.EventHandler(this.button1_clic);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1447, 832);
+            this.Controls.Add(this.button_clear);
+            this.Controls.Add(this.button_return);
             this.Controls.Add(this.button_rightbrace);
             this.Controls.Add(this.button_leftbrace);
             this.Controls.Add(this.button_seven);
@@ -272,7 +285,6 @@
             this.Controls.Add(this.button_run);
             this.Controls.Add(this.layoutPanel);
             this.Controls.Add(this.draw_box);
-            this.Controls.Add(this.m_button1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -282,8 +294,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button m_button1;
         private System.Windows.Forms.PictureBox draw_box;
         private System.Windows.Forms.FlowLayoutPanel layoutPanel;
         private System.Windows.Forms.Button button_run;
@@ -303,6 +313,8 @@
         private System.Windows.Forms.Button button_seven;
         private System.Windows.Forms.Button button_leftbrace;
         private System.Windows.Forms.Button button_rightbrace;
+        private System.Windows.Forms.Button button_return;
+        private System.Windows.Forms.Button button_clear;
     }
 }
 
