@@ -88,7 +88,7 @@
             this.button_return.Size = new System.Drawing.Size(53, 53);
             this.button_return.TabIndex = 23;
             this.button_return.UseVisualStyleBackColor = true;
-            this.button_return.Click += new System.EventHandler(this.button_return_Click);
+            this.button_return.Click += new System.EventHandler(this.Button_return_Click);
             // 
             // button_rightbrace
             // 
@@ -286,7 +286,7 @@
             this.Controls.Add(this.layoutPanel);
             this.Controls.Add(this.draw_box);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Accrologo";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.draw_box)).EndInit();
             this.ResumeLayout(false);

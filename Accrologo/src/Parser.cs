@@ -122,7 +122,10 @@ namespace Accrologo
         private void parseRepeat(Queue<string> tokenList, Tortoise turtle, System.Drawing.Graphics g)
         {
             int repeatNumber = getNumber(tokenList, g);
-            string token = tokenList.Dequeue();
+            string token = "";
+            if (tokenList.Count != 0)
+                token = tokenList.Dequeue(); 
+
             if (token != "LEFTBRACE")
             {
                 using (Font myFont = new Font("Arial", 14))
@@ -172,12 +175,11 @@ namespace Accrologo
                 using (Font myFont = new Font("Arial", 14))
                 {
                     g.DrawString("ERROR : Number expected", myFont, Brushes.Green, new Point(2, 2));
-                    return 0;
+                    return -1;
                 }
             }
 
             int number = 0;
-
             while(isTokenNumber(tokenList))
             {
                 int tokenNumber;

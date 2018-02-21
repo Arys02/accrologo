@@ -67,7 +67,7 @@ namespace Accrologo
             
         }
 
-        private void button_return_Click(object sender, EventArgs e)
+        private void Button_return_Click(object sender, EventArgs e)
         {
             if (listToken.Count > 0)
             {
@@ -75,8 +75,8 @@ namespace Accrologo
                 listToken.Reverse();
                 listToken.Dequeue();
                 listToken.Reverse();
-                layoutPanel.Controls.RemoveAt(layoutPanel.Controls.Count - 1);
             }
+            layoutPanel.Controls.RemoveAt(layoutPanel.Controls.Count - 1);
         }
         private void forwardClick(object sender, EventArgs e)
         {
