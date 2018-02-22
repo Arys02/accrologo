@@ -30,6 +30,10 @@
         {
             this.layoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.button_run = new System.Windows.Forms.Button();
+            this.button_color = new System.Windows.Forms.Button();
+            this.button_up = new System.Windows.Forms.Button();
+            this.button_down = new System.Windows.Forms.Button();
+            this.button_center = new System.Windows.Forms.Button();
             this.button_clear = new System.Windows.Forms.Button();
             this.button_return = new System.Windows.Forms.Button();
             this.button_rightbrace = new System.Windows.Forms.Button();
@@ -69,6 +73,46 @@
             this.button_run.Text = "Run";
             this.button_run.UseVisualStyleBackColor = true;
             this.button_run.Click += new System.EventHandler(this.test_run);
+            // 
+            // button_color
+            // 
+            this.button_color.Image = global::Accrologo.Properties.Resources.color;
+            this.button_color.Location = new System.Drawing.Point(20, 614);
+            this.button_color.Name = "button_color";
+            this.button_color.Size = new System.Drawing.Size(53, 53);
+            this.button_color.TabIndex = 28;
+            this.button_color.UseVisualStyleBackColor = true;
+            this.button_color.Click += new System.EventHandler(this.button_color_Click);
+            // 
+            // button_up
+            // 
+            this.button_up.Image = global::Accrologo.Properties.Resources.up;
+            this.button_up.Location = new System.Drawing.Point(20, 673);
+            this.button_up.Name = "button_up";
+            this.button_up.Size = new System.Drawing.Size(53, 53);
+            this.button_up.TabIndex = 27;
+            this.button_up.UseVisualStyleBackColor = true;
+            this.button_up.Click += new System.EventHandler(this.button_up_Click);
+            // 
+            // button_down
+            // 
+            this.button_down.Image = global::Accrologo.Properties.Resources.down;
+            this.button_down.Location = new System.Drawing.Point(20, 732);
+            this.button_down.Name = "button_down";
+            this.button_down.Size = new System.Drawing.Size(53, 53);
+            this.button_down.TabIndex = 26;
+            this.button_down.UseVisualStyleBackColor = true;
+            this.button_down.Click += new System.EventHandler(this.button_down_Click);
+            // 
+            // button_center
+            // 
+            this.button_center.Image = global::Accrologo.Properties.Resources.robot;
+            this.button_center.Location = new System.Drawing.Point(20, 555);
+            this.button_center.Name = "button_center";
+            this.button_center.Size = new System.Drawing.Size(53, 53);
+            this.button_center.TabIndex = 25;
+            this.button_center.UseVisualStyleBackColor = true;
+            this.button_center.Click += new System.EventHandler(this.button_center_Click);
             // 
             // button_clear
             // 
@@ -264,6 +308,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1447, 832);
+            this.Controls.Add(this.button_color);
+            this.Controls.Add(this.button_up);
+            this.Controls.Add(this.button_down);
+            this.Controls.Add(this.button_center);
             this.Controls.Add(this.button_clear);
             this.Controls.Add(this.button_return);
             this.Controls.Add(this.button_rightbrace);
@@ -315,6 +363,10 @@
         private System.Windows.Forms.Button button_rightbrace;
         private System.Windows.Forms.Button button_return;
         private System.Windows.Forms.Button button_clear;
+        private System.Windows.Forms.Button button_center;
+        private System.Windows.Forms.Button button_down;
+        private System.Windows.Forms.Button button_up;
+        private System.Windows.Forms.Button button_color;
     }
 }
 

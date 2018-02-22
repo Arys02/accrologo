@@ -87,11 +87,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons\clear.png" />
+    <None Include="icons\color.png" />
+    <None Include="icons\down.png" />
     <Content Include="icons\huit.png" />
     <None Include="icons\leftbrace.png" />
     <Content Include="icons\neuf.png" />
     <None Include="icons\rightbrace.png" />
     <Content Include="icons\return.png" />
+    <None Include="icons\robot.png" />
+    <None Include="icons\up.png" />
     <Content Include="icons\zero.png" />
     <None Include="icons\sept.png" />
     <None Include="icons\six.png" />

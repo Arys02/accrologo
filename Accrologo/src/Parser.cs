@@ -12,12 +12,18 @@ namespace Accrologo
          * <instr> :=
          * | <move>
          * | <loop>
+         * | <action>
          * | <sub_declaration>
          * | <sub_execution>
          * <move> :=
          * | "forward" num;
          * | "left" num;
          * | "right" num;
+         * | "backward" num;
+         * <action> :=
+         * | "pen up";
+         * | "pen down";
+         * | "color" num;
          * <loop> :=
          * | "repeat" num "[" <instrs> "]" ;
          * <sub_declaration> :=
@@ -94,6 +100,18 @@ namespace Accrologo
                         Console.WriteLine("repeat");
                         parseRepeat(tokenList, turtle, g);
                         break;
+                    case "BACKCENTER":
+                        parseBackCenter(turtle);
+                        break;
+                    case "PENUP":
+                        turtle.setPenUp();
+                        break;
+                    case "PENDOWN":
+                        turtle.setPenDown();
+                        break;
+                    case "COLOR":
+                        parseColor(tokenList, turtle, g);
+                        break;
                     default:
                         using (Font myFont = new Font("Arial", 14))
                         {
@@ -104,6 +122,15 @@ namespace Accrologo
             }
         }
 
+        private void parseBackCenter(Tortoise turtle)
+        {
+            turtle.goCenter();
+        }
+
+        private void parseColor(Queue<string> tokenList, Tortoise turtle, Graphics g)
+        {
+            turtle.changeColor(getNumber(tokenList, g));
+        }
         private void parseForward(Queue<string> tokenList, Tortoise turtle, System.Drawing.Graphics g)
         {
             turtle.updateAndMove(getNumber(tokenList, g), g);

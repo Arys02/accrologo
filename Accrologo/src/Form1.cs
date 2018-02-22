@@ -12,17 +12,18 @@ namespace Accrologo
 {
     public partial class Form1 : Form
     {
-        public Graphics g { get; set; }
-        private Pen pen1 = new System.Drawing.Pen(Color.Blue, 2F);
-        private Tortoise turtle; 
-        Parser Parser = new Parser();
-        Queue<string> listToken = new Queue<string>();
+        private Graphics g { get; set; }
+        private Tortoise turtle;
+        private Parser Parser;
+        private Queue<string> listToken; 
         
         public Form1()
         {
             InitializeComponent();
             g = draw_box.CreateGraphics();
             turtle = new Tortoise(0 ,new Point(draw_box.Size.Width / 2, draw_box.Size.Height / 2));
+            listToken = new Queue<string>();
+            Parser = new Parser();
         }
 
         private PictureBox newpic(string id, System.Drawing.Bitmap pb)
@@ -160,6 +161,27 @@ namespace Accrologo
             layoutPanel.Controls.Add(newpic("LEFTBRACE", global::Accrologo.Properties.Resources.leftbrace));
         }
 
-       
+        private void button_center_Click(object sender, EventArgs e)
+        {
+            layoutPanel.Controls.Add(newpic("BACKCENTER", global::Accrologo.Properties.Resources.robot));
+        }
+
+        private void button_color_Click(object sender, EventArgs e)
+        {
+            layoutPanel.Controls.Add(newpic("COLOR", global::Accrologo.Properties.Resources.color));
+        }
+
+        private void button_up_Click(object sender, EventArgs e)
+        {
+
+            layoutPanel.Controls.Add(newpic("PENUP", global::Accrologo.Properties.Resources.up));
+        }
+
+        private void button_down_Click(object sender, EventArgs e)
+        {
+
+            layoutPanel.Controls.Add(newpic("PENDOWN", global::Accrologo.Properties.Resources.down));
+
+        }
     }
 }
